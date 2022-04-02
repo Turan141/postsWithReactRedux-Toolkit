@@ -9,10 +9,10 @@ export const EmojiLikes = () => {
 
   const emojisMap = Object.entries(emojis).map(([key, subject], i) => (
     <li key={i}>
-      <span className="emojis">
-        {i}
-        {subject}
-      </span>
+      <div className="emojis">
+        <button className="emojisEmoji">{subject}</button>
+        <div className="emojisCount">{i}</div>
+      </div>
     </li>
   ));
 
