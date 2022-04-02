@@ -33,6 +33,16 @@ body{
     h3{
       margin-top:20px;
     }
+
+    .emojisDiv{
+      display:flex;
+      list-style: none;
+      position: relative;
+      top:30px;
+    }
+    .emojis{
+      margin:10px;
+    }
   }
   form{
     display:flex;

@@ -1,4 +1,5 @@
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
+import { EmojiLikes } from "./EmojiLikes";
 
 export const Posts = () => {
   const posts = useSelector((state) => state.posts);
@@ -10,6 +11,7 @@ export const Posts = () => {
           <small>Author</small>: {elem.author}
         </h2>
         <h3>Text: {elem.text}</h3>
+        <EmojiLikes />
       </div>
     );
   });
