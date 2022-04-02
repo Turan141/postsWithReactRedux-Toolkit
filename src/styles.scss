@@ -5,7 +5,7 @@
 }
 
 body{
-  height:auto;
+  height: 100vh;
 }
 
 .App {
@@ -22,11 +22,12 @@ body{
   
   .postsBlog{
     width:20rem;
-    margin:10px;
+    height: 40vh;
+    margin:20px;
     border-radius:7px;
-    border:1px solid #ff276f;
+    border:3px solid #ff276f;
     padding:20px;
-    h2{
+    box-shadow: rgba(240, 46, 170, 0.4) 0px 5px, rgba(240, 46, 170, 0.3) 0px 10px, rgba(240, 46, 170, 0.2) 0px 15px, rgba(240, 46, 170, 0.1) 0px 20px, rgba(240, 46, 170, 0.05) 0px 25px;    h2{
       margin-bottom:15px;
     }
     h3{
@@ -41,31 +42,45 @@ body{
     justify-content: center;
     padding: 20px;
     font-size: 24px;
-    label{
-
-    }
     button{
-      margin-left: auto;
-      margin-right: auto;
-      width: 7rem;
-      padding: 5px;
-      margin-top:7px;
-      border:none;
-      background-color:#ff276f;
-      border-radius: 5px;
-      box-shadow: 0 0 10px 0px #f6f6f6;
-      transition: 0.5s ease;
+      background: #e62143;
+      border-radius: 11px;
+      color: #fff;
+      cursor: pointer;
+      display: flex;
+      font-family: Mija,-apple-system,BlinkMacSystemFont,Roboto,"Roboto Slab","Droid Serif","Segoe UI",system-ui,Arial,sans-serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      justify-content: center;
+      padding: .8em 1em;
+      text-align: center;
+      text-decoration: none;
+      text-decoration-skip-ink: auto;
+      text-shadow: rgba(0, 0, 0, .3) 1px 1px 1px;
+      text-underline-offset: 1px;
+      transition: all .2s ease-in-out;
+      user-select: none;
+      -webkit-user-select: none;
+      touch-action: manipulation;
+      width: 70%;
+      margin: 10px auto;
+      word-break: break-word;
+      border: 0;
       &:hover{
-        box-shadow: 0 0 20px 10px #f6f6f6, inset 0 0 20px 20px #f6f6f6  ;
-      }
+        border-bottom-style: none;
+        border-color: #dadada;      }
     }
     input{
       border:none;
       border-radius:5px;
-      padding: 10px;
-      margin: 15px;
+      padding: 5px;
+      margin: 10px;
       width: 15rem;
       font-size: 18px;
+      &:focus{
+        border: 5px groove #ff276f;
+        border-radius:10px;
+      }
     }
   }
 }
