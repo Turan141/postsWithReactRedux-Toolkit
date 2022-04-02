@@ -1,21 +1,59 @@
-import React from "react";
+import { nanoid } from "@reduxjs/toolkit";
+import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { addPosts } from "./store/postSlice";
+import { addPost } from "./store/postSlice";
 
 export const PostForm = () => {
   const dispatch = useDispatch();
+  const [author, setAuthor] = useState("");
+  const [text, setText] = useState("");
+
+  const inputHandlerAuthor = (e) => {
+    setAuthor(e.target.value);
+  };
+
+  const inputHandlerText = (e) => {
+    setText(e.target.value);
+  };
+
+  const addPostHandler = (e) => {
+    e.preventDefault();
+    if (author && text) {
+      dispatch(
+        addPost({
+          id: nanoid(),
+          author,
+          text
+        })
+      );
+      setAuthor("");
+      setText("");
+    }
+  };
 
   return (
     <form>
       <label>
         Author:
-        <input id="author" />
+        <input
+          autoComplete="off"
+          onChange={inputHandlerAuthor}
+          value={author}
+          id="author"
+          required
+        />
       </label>
       <label>
         Post Content:
-        <input id="post" />
+        <input
+          autoComplete="off"
+          onChange={inputHandlerText}
+          value={text}
+          id="post"
+          required
+        />
       </label>
-      <button>Add Post</button>
+      <button onClick={addPostHandler}>Add Post</button>
     </form>
   );
 };
