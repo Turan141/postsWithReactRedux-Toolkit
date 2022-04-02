@@ -1,6 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const initialState = [];
+const initialState = [
+  { author: "Turan", post: "Hello my name is Turan" },
+  { author: "Fatis", post: "Hello my name is Fatis" }
+];
 
 export const postsSlice = createSlice({
   name: "posts",
@@ -14,6 +17,6 @@ export const postsSlice = createSlice({
 });
 
 // Action creators are generated for each case reducer function
-export const { increment, decrement, incrementByAmount } = counterSlice.actions;
+export const { addPost } = postsSlice.actions;
 
 export default postsSlice.reducer;

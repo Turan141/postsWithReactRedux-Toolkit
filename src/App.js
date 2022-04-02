@@ -1,18 +1,12 @@
+import { PostForm } from "./PostsForm";
+import { Posts } from "./Posts";
 import "./styles.scss";
 
 export default function App() {
   return (
     <div className="App">
-      <form>
-        <label>
-          Author:
-          <input id="author" />
-        </label>
-        <label>
-          Post Content:
-          <input id="post" />
-        </label>
-      </form>
+      <PostForm />
+      <Posts />
     </div>
   );
 }

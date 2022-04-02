@@ -3,10 +3,18 @@
   text-align: center;
   background-color: #15121e;
   height: 400px;
-  width: auto;
   color: #f6f6f6;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  align-items: center;
+  padding:20px;
+  .postsBlog{
+    width: 80%;
+    margin:10px;
+    border-radius:7px;
+    border:1px solid #ff276f;
+  }
   form{
     width:200px;
     padding: 10px;
