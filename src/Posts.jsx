@@ -1,18 +1,29 @@
 import { useSelector } from "react-redux";
 import { EmojiLikes } from "./EmojiLikes";
 import { useDispatch } from "react-redux";
-import { deletePost } from "./store/postSlice";
+import { removePost } from "./store/postSlice";
 
 export const Posts = () => {
   const posts = useSelector((state) => state.posts);
-  const deletePost = (e) => {
-    console.log(e);
+  const dispatch = useDispatch();
+
+  const deletePostHandler = (e) => {
+    let id = e.target.getAttribute("data-id");
+    dispatch(
+      removePost({
+        id
+      })
+    );
   };
 
   const postsMap = posts.map((elem) => {
     return (
       <div key={elem.id} className="postsBlog">
-        <button onClick={deletePost} className="delete">
+        <button
+          data-id={elem.id}
+          onClick={deletePostHandler}
+          className="delete"
+        >
           &#10008;
         </button>
         <h2>
