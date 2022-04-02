@@ -28,12 +28,26 @@ body{
     border-radius:7px;
     border:3px solid #ff276f;
     padding:20px;
-    box-shadow: rgba(240, 46, 170, 0.4) 0px 5px, rgba(240, 46, 170, 0.3) 0px 10px, rgba(240, 46, 170, 0.2) 0px 15px, rgba(240, 46, 170, 0.1) 0px 20px, rgba(240, 46, 170, 0.05) 0px 25px;    h2{
-      margin-bottom:15px;
+    box-shadow: 
+    rgba(240, 46, 170, 0.4) 0px 5px, 
+    rgba(240, 46, 170, 0.3) 0px 10px, 
+    rgba(240, 46, 170, 0.2) 0px 15px, 
+    rgba(240, 46, 170, 0.1) 0px 20px, 
+    rgba(240, 46, 170, 0.05) 0px 25px; 
+    .delete{
+      display:inline-block;
+      position: relative;
+      left:30%;
+      border:none;
+      background: none;
+      color:red;
+      font-size: 25px;
+    }   
+    h2{
+    margin-bottom:15px;
     }
     h3{
       margin-top:30px;
-
     }
     .emojisDiv{
       display:flex;
@@ -43,7 +57,6 @@ body{
     .emojis{
       flex-direction: column;
       margin-left:20px;
-
       button{
         background: none;
         border:none;

@@ -7,6 +7,7 @@ export const Posts = () => {
   const postsMap = posts.map((elem) => {
     return (
       <div className="postsBlog">
+        <button className="delete">&#10008;</button>
         <h2>
           <small>Author</small>: {elem.author}
         </h2>
