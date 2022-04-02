@@ -19,10 +19,18 @@ body{
   flex-direction: column;
   align-items: center;
   padding:20px;
+  .posts{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media only screen and (max-width: 600px){
+    .posts{
+      display: block;
+    }
+  }
 
   .postsBlog{
     word-wrap: break-word;
-    width:20rem;
     min-height: 40vh;
     margin:20px;
     border-radius:7px;
@@ -37,11 +45,16 @@ body{
     .delete{
       display:inline-block;
       position: relative;
-      left:30%;
+      margin-bottom: 10px;
+      left:40%;
       border:none;
       background: none;
       color:red;
-      font-size: 25px;
+      font-size: 30px;
+      &:hover{
+        cursor: pointer;
+        text-shadow: 0 0 10px red, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+      }
     }   
     h2{
     margin-bottom:15px;
@@ -55,7 +68,6 @@ body{
       margin-top:10%;
     }
     .emojis{
-      flex-direction: column;
       margin-left:20px;
       button{
         background: none;
