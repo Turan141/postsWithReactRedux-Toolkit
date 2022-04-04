@@ -1,10 +1,9 @@
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { EmojiLikes } from "./EmojiLikes";
-import { useDispatch } from "react-redux";
-import { removePost } from "./store/postSlice";
+import { removePost, increaseLikeCount } from "./store/postSlice";
 
 export const Posts = () => {
-  const posts = useSelector((state) => state.posts.posts);
+  const posts = useSelector((state) => state.posts);
   const dispatch = useDispatch();
 
   const deletePostHandler = (e) => {
@@ -12,6 +11,17 @@ export const Posts = () => {
     dispatch(
       removePost({
         id
+      })
+    );
+  };
+
+  const increaseLikeCountHandler = (id, type) => {
+    let emojiTarget = id;
+    let emojiType = type;
+    dispatch(
+      increaseLikeCount({
+        emojiTarget,
+        emojiType
       })
     );
   };
@@ -26,18 +36,27 @@ export const Posts = () => {
         >
           &#10008;
         </button>
+
         <h2>
           <small>Author</small>: {elem.author}
         </h2>
+
         <h3>Text: {elem.text}</h3>
-        <EmojiLikes />
+
+        <div className="emojisDiv">
+          <EmojiLikes
+            data={elem}
+            increaseLikeCountHandler={increaseLikeCountHandler}
+            id={elem.id}
+          />
+        </div>
       </div>
     );
   });
 
   return (
     <>
-      <div className="posts">{postsMap}</div>
+      <div>{postsMap}</div>
     </>
   );
 };

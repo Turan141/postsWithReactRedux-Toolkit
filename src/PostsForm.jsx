@@ -7,6 +7,13 @@ export const PostForm = () => {
   const dispatch = useDispatch();
   const [author, setAuthor] = useState("");
   const [text, setText] = useState("");
+  const emojis = {
+    "😀": 0,
+    "😸": 0,
+    "🤡": 0,
+    "💥": 0,
+    "⚡": 0
+  };
 
   const inputHandlerAuthor = (e) => {
     setAuthor(e.target.value);
@@ -23,7 +30,8 @@ export const PostForm = () => {
         addPost({
           id: nanoid(),
           author,
-          text
+          text,
+          reaction: emojis
         })
       );
       setAuthor("");
