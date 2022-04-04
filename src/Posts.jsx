@@ -40,9 +40,7 @@ export const Posts = () => {
         <h2>
           <small>Author</small>: {elem.author}
         </h2>
-
         <h3>Text: {elem.text}</h3>
-
         <div className="emojisDiv">
           <EmojiLikes
             data={elem}

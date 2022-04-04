@@ -1,7 +1,3 @@
-// import { useSelector } from "react-redux";
-// import { useDispatch } from "react-redux";
-// import { increment } from "./store/postSlice";
-
 export const EmojiLikes = ({ data, increaseLikeCountHandler, id }) => {
   const emojisMap = Object.entries(data.reaction).map(([emoji, subject], i) => (
     <li key={i}>
@@ -16,5 +12,5 @@ export const EmojiLikes = ({ data, increaseLikeCountHandler, id }) => {
       </div>
     </li>
   ));
-  return <div>{emojisMap}</div>;
+  return <div className="emojisDiv">{emojisMap}</div>;
 };

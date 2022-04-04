@@ -1,4 +1,4 @@
-import { createSlice, combineReducers } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
 
 const postsInitialState = [
   {
@@ -34,15 +34,17 @@ export const postsSlice = createSlice({
     addPost: (state, action) => {
       state.push(action.payload);
     },
+
     removePost: (state, action) => {
       return state.filter((stateElem) => {
         return stateElem.id !== action.payload.id;
       });
     },
+
     increaseLikeCount: (state, action) => {
       const { emojiTarget, emojiType } = action.payload;
 
-      let targetPost = state.find((post) => +post.id === +emojiTarget);
+      let targetPost = state.find((post) => post.id === emojiTarget);
       if (targetPost) {
         targetPost.reaction[emojiType]++;
       }
