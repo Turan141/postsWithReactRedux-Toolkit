@@ -4,15 +4,17 @@
   box-sizing: border-box;
 }
 
-body{
+
+body, html {
   height: 100vh;
+  background-color: #15121e;
 }
 
 .App {
   font-family: sans-serif;
   text-align: center;
   background-color: #15121e;
-  height: auto;
+  height: 100%;
   color: #f6f6f6;
   display: flex;
   justify-content: flex-start;
@@ -27,12 +29,15 @@ body{
     .posts{
       display: block;
     }
+    .postsBlog{
+      min-width:100px;
+    }
   }
 
   .postsBlog{
     word-wrap: break-word;
     min-height: 40vh;
-    margin:20px;
+    margin:40px 25px 25px 25px;
     border-radius:7px;
     border:3px solid #ff276f;
     padding:20px;
@@ -42,6 +47,7 @@ body{
     rgba(240, 46, 170, 0.2) 0px 15px, 
     rgba(240, 46, 170, 0.1) 0px 20px, 
     rgba(240, 46, 170, 0.05) 0px 25px; 
+
     .delete{
       display:inline-block;
       position: relative;
@@ -65,7 +71,7 @@ body{
     .emojisDiv{
       display:flex;
       list-style: none;
-      margin-top:10%;
+      margin-top:5%;
       justify-content: center;
     }
     .emojis{
