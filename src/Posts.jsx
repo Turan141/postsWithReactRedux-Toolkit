@@ -4,7 +4,7 @@ import { useDispatch } from "react-redux";
 import { removePost } from "./store/postSlice";
 
 export const Posts = () => {
-  const posts = useSelector((state) => state.posts);
+  const posts = useSelector((state) => state.posts.posts);
   const dispatch = useDispatch();
 
   const deletePostHandler = (e) => {
@@ -31,7 +31,6 @@ export const Posts = () => {
         </h2>
         <h3>Text: {elem.text}</h3>
         <EmojiLikes />
-        <button onClick={() => console.log(posts)}></button>
       </div>
     );
   });

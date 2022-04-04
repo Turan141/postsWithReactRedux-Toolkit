@@ -1,6 +1,6 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, combineReducers  } from "@reduxjs/toolkit";
 
-const initialState = [
+const postsInitialState = [
   {
     id: "1",
     author: "What is Done",
@@ -9,9 +9,17 @@ const initialState = [
   { id: "2", author: "Whats next", text: "TS, Redux-Query" }
 ];
 
+const emojisInitialState = {
+  '😀': 0,
+  '😸': 0,
+  "🤡": 0,
+  "💥":0,
+  "⚡":0, 
+}
+
 export const postsSlice = createSlice({
   name: "posts",
-  initialState,
+  initialState: postsInitialState,
   reducers: {
     addPost: (state, action) => {
       state.push(action.payload);
@@ -24,7 +32,23 @@ export const postsSlice = createSlice({
   }
 });
 
+export const emojisSlice = createSlice({
+  name: "emojis",
+  initialState: emojisInitialState,
+  reducers: {
+    increment: (state) => state + 1
+  }
+});
+
 // Action creators are generated for each case reducer function
 export const { addPost, removePost } = postsSlice.actions;
+export const { increment } = emojisSlice.actions;
 
-export default postsSlice.reducer;
+
+const reducer = combineReducers({
+  posts: postsSlice.reducer,
+  emojis: emojisSlice.reducer,
+})
+
+export default reducer
+
